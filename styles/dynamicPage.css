@@ -1,0 +1,67 @@
+.dynamic-page {
+  display: flex;
+  flex-direction: column;
+  border: transparent;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.dynamic-page__header {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--container-background);
+  gap: 1rem;
+  padding: 1rem;
+  box-shadow: var(--sapContent_HeaderShadow);
+}
+
+.dynamic-page__content {
+  padding: 1rem 1rem 0 1rem;
+  background-color: var(--app-background);
+}
+
+.dynamic-page__title {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.dynamic-page__header-title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+@container (min-width: 600px) {
+  .dynamic-page__content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .dynamic-page__header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@container (min-width: 1024px) {
+  .dynamic-page__content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .dynamic-page__header {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@container (min-width: 1440px) {
+  .dynamic-page__content {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .dynamic-page__header {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
