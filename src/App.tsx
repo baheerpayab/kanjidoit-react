@@ -8,6 +8,8 @@ import { getKanji } from "./data/getKanji";
 import { FlexibleColumnLayout } from "./components/FlexibleColumnLayout/flexibleColumnLayout";
 import { ObjectPage } from "./components/ObjectPage/objectPage";
 import { ObjectPageSection } from "./components/ObjectPageSection/objectPageSection";
+import { Avatar } from "./components/Avatar/avatar";
+import { SearchField } from "./components/SearchField/searchField";
 
 function App() {
   type Kanji = {
@@ -18,6 +20,8 @@ function App() {
 
   const [kanji, setKanji] = useState<Kanji[]>([]);
   const [selectedKanjiId, setSelectedKanjiId] = useState("");
+  const [search, setSearch] = useState("");
+  console.log(search);
 
   useEffect(() => {
     getKanji().then((result) => {
@@ -25,38 +29,60 @@ function App() {
     });
   }, []);
 
-  const tableToolbar = <Toolbar title="Kanji (<n>)" />;
+  const tableSearch = <SearchField onChange={(e) => {setSearch(e)}}></SearchField>
+
+  const tableToolbar = <Toolbar title="Kanji (<n>)" items={[tableSearch]}/>;
 
   const kanjiTable = (
     <Table
-      data={kanji}
+      data={search ? kanji.filter((e) => {
+        console.log("e is: " + e.meaning +  " and search is:" + search);
+        console.log()
+        return e.meaning.toLowerCase().includes(search.toLowerCase());
+      }) : kanji}
       columns={["kanji", "meaning"]}
       mode="Navigation"
       toolbar={tableToolbar}
-      selectionChange={(row) => setSelectedKanjiId(row.meaning)}
+      selectionChange={(row) => setSelectedKanjiId(row.kanji)}
       getKey={(row) => row.kanji}
     ></Table>
   );
 
   const dynamicPageHeader = (
-    <DynamicPageHeader heading="Kanji Do"></DynamicPageHeader>
+    <DynamicPageHeader heading="Kanji Do It"></DynamicPageHeader>
   );
 
-  const dynamicPage = <DynamicPage content={kanjiTable} dynamicPageHeader={dynamicPageHeader} />
+  const dynamicPage = (
+    <DynamicPage content={kanjiTable} dynamicPageHeader={dynamicPageHeader} />
+  );
+
+  const objectAvatar = <Avatar text={selectedKanjiId}></Avatar>;
 
   const objectPageHeader = (
-    <DynamicPageHeader heading={selectedKanjiId}></DynamicPageHeader>
+    <DynamicPageHeader
+      heading={kanji.find((e) => e.kanji === selectedKanjiId)?.meaning ?? ""}
+      subheading="Kanji"
+      headerContent={objectAvatar}
+    ></DynamicPageHeader>
   );
 
   const objectPageSections = [
     <ObjectPageSection heading="Section" content={"Hello"}></ObjectPageSection>,
-  ]
+  ];
 
-  const objectPage = <ObjectPage dynamicPageHeader={objectPageHeader} content={objectPageSections}></ObjectPage>
+  const objectPage = (
+    <ObjectPage
+      dynamicPageHeader={objectPageHeader}
+      content={objectPageSections}
+    ></ObjectPage>
+  );
 
   return (
     <>
-      <FlexibleColumnLayout masterColumnPage={dynamicPage} detailColumnPage={objectPage}></FlexibleColumnLayout>
+      <FlexibleColumnLayout
+        masterColumnPage={dynamicPage}
+        detailColumnPage={objectPage}
+      ></FlexibleColumnLayout>
     </>
   );
 }

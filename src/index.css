@@ -146,26 +146,6 @@ button:hover {
   cursor: pointer;
 }
 
-.avatar {
-  background-color: var(--avatar-background);
-  color: var(--avatar-textColor);
-  border-radius: 0.75rem;
-  display: flex;
-  flex: 0 0 0;
-  /* padding: 0.9375rem; */
-  justify-content: center;
-  align-items: center;
-  height: 3rem;
-  width: 3rem;
-  min-width: 3rem;
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.avatar span {
-  font-size: 1.5rem;
-}
-
 .label {
   color: var(--labelColor);
   font-size: 0.875rem;
@@ -208,54 +188,4 @@ body {
   height: 100%;
   margin: 0 auto;
   /* max-width: 64rem; */
-}
-
-.input-field {
-  width: 100%;
-  background: transparent;
-  border: none;
-  height: 100%;
-  width: 100%;
-  padding: 0.25rem 0.5rem;
-  box-sizing: border-box;
-
-}
-
-.input-field-container {
-  position: relative;
-  border-radius: 0.25rem;
-  height: 1.625rem;
-  box-shadow: inset 0 0 0 1px #3b4249; /* top/sides */
-  background-color: #161c22;
-  overflow: hidden;
-}
-
-.input-field-container::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background-color: #a9b4be;
-  border-bottom-left-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
-}
-
-.search-input-field {
-  width: 30% !important;
-}
-
-.search-input-field input::placeholder {
-  font-style: italic;
-
-}
-
-.input-icon {
-  position: absolute;
-  height: min-content;
-  top: 50%;
-  right: 0.5rem;
-  transform: translateY(-50%);
-  height: 1rem;
 }

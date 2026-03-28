@@ -6,11 +6,11 @@
 }
 
 .fcl__master {
-  width: 100%;
+  flex: 1;
 }
 
 .fcl__detail {
-  width: 75%;
+  flex: 0 0 30%;
 }
 
 .split-view-closed {

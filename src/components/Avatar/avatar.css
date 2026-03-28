@@ -1,0 +1,19 @@
+.avatar {
+  background-color: var(--avatar-background);
+  color: var(--avatar-textColor);
+  border-radius: 0.75rem;
+  display: flex;
+  flex: 0 0 0;
+  /* padding: 0.9375rem; */
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  width: 5rem;
+  min-width: 5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.avatar span {
+  font-size: 2.5rem;
+}
