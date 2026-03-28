@@ -1,0 +1,40 @@
+.dynamic-page-header__heading {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.dynamic-page-header__heading-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dynamic-page-header {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--container-background);
+  gap: 1rem;
+  padding: 1rem;
+  box-shadow: var(--sapContent_HeaderShadow);
+}
+
+@container (min-width: 600px) {
+  .dynamic-page__header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@container (min-width: 1024px) {
+  .dynamic-page__header {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@container (min-width: 1440px) {
+  .dynamic-page__header {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}

@@ -1,0 +1,20 @@
+
+.object-page-section {
+  display: flex;
+  flex-direction: column; 
+}
+
+.object-page-section__body {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  border: transparent;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: var(--container-background);
+}
+
+.object-page-section__toolbar h5{
+  font-size: 1.25rem;
+}
