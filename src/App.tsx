@@ -10,16 +10,29 @@ import { ObjectPage } from "./components/ObjectPage/objectPage";
 import { ObjectPageSection } from "./components/ObjectPageSection/objectPageSection";
 import { Avatar } from "./components/Avatar/avatar";
 import { SearchField } from "./components/SearchField/searchField";
+import { IconTabBar } from "./components/IconTabBar/iconTabBar";
+import { getRadicals } from "./data/getRadicals";
 
 function App() {
   type Kanji = {
-    kanji: string;
-    meaning: string;
-    radicals: string[];
+    kanji: string,
+    meaning: string,
+    radicals: string[]
   };
+
+  type Radical = {
+    radical: string;
+    name: string,
+    kanji: string[]
+  }
 
   const [kanji, setKanji] = useState<Kanji[]>([]);
   const [selectedKanjiId, setSelectedKanjiId] = useState("");
+
+  const [radicals, setRadicals] = useState<Radical[]>([]);
+  // const [selectedRadicalId, setSelectedRadicalId] = useState("");
+  
+
   const [search, setSearch] = useState("");
   console.log(search);
 
@@ -27,24 +40,55 @@ function App() {
     getKanji().then((result) => {
       setKanji(result);
     });
+
+    getRadicals().then((result) => {
+      setRadicals(result);
+    })
   }, []);
 
-  const tableSearch = <SearchField onChange={(e) => {setSearch(e)}}></SearchField>
+  const tableSearch = (
+    <SearchField
+      onChange={(e) => {
+        setSearch(e);
+      }}
+    ></SearchField>
+  );
 
-  const tableToolbar = <Toolbar title="Kanji (<n>)" items={[tableSearch]}/>;
+  const kanjiTableToolbar = <Toolbar title="Kanji (<n>)" items={[tableSearch]} />;
 
   const kanjiTable = (
     <Table
-      data={search ? kanji.filter((e) => {
-        console.log("e is: " + e.meaning +  " and search is:" + search);
-        console.log()
-        return e.meaning.toLowerCase().includes(search.toLowerCase());
-      }) : kanji}
+      data={
+        search
+          ? kanji.filter((e) => {
+              return e.meaning.toLowerCase().includes(search.toLowerCase());
+            })
+          : kanji
+      }
       columns={["kanji", "meaning"]}
       mode="Navigation"
-      toolbar={tableToolbar}
+      toolbar={kanjiTableToolbar}
       selectionChange={(row) => setSelectedKanjiId(row.kanji)}
       getKey={(row) => row.kanji}
+    ></Table>
+  );
+
+  const radicalsTableToolbar = <Toolbar title="Radicals (<n>)" items={[tableSearch]} />;
+
+  const radicalsTable = (
+    <Table
+      data={
+        search
+          ? radicals.filter((e) => {
+              return e.name.toLowerCase().includes(search.toLowerCase());
+            })
+          : radicals
+      }
+      columns={["radical", "name"]}
+      mode="Navigation"
+      toolbar={radicalsTableToolbar}
+      // selectionChange={(row) => setSelectedRadicalId(row.radical)}
+      getKey={(row) => row.radical}
     ></Table>
   );
 
@@ -86,6 +130,9 @@ function App() {
   );
 
   const objectPageSections = [
+    <ObjectPageSection heading="Section" content={"Hello"}></ObjectPageSection>,
+    <ObjectPageSection heading="Section" content={"Hello"}></ObjectPageSection>,
+    <ObjectPageSection heading="Section" content={"Hello"}></ObjectPageSection>,
     <ObjectPageSection heading="Section" content={"Hello"}></ObjectPageSection>,
   ];
 

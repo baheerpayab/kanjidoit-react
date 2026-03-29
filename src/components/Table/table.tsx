@@ -13,7 +13,7 @@ export function Table<T extends Record<string, unknown>>({
   columns: (keyof T & string)[];
   mode?: string;
   toolbar?: React.ReactElement<typeof Toolbar>;
-  selectionChange: (row: T) => void;
+  selectionChange?: (row: T) => void;
   getKey: (row: T) => React.Key;
 }) {
   return (
@@ -44,7 +44,7 @@ export function Table<T extends Record<string, unknown>>({
                   if (currentSelection !== e.currentTarget) {
                     currentSelection?.classList.remove("table__row--selected");
                     e.currentTarget.classList.add("table__row--selected");
-                    selectionChange(row);
+                    if (selectionChange) selectionChange(row);
                   }
                 }
               }}
