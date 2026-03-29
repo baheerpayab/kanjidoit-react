@@ -12,7 +12,7 @@ export function ObjectPage({
   return (
     <div className="dynamic-page">
       {dynamicPageHeader}
-      <main className="dynamic-page__content">
+      <main className="responsive-padding">
         {content?.map((section) => section)}
       </main>
     </div>

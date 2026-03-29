@@ -11,23 +11,3 @@
   background-color: var(--app-background);
 }
 
-@container (min-width: 0px) {
-  .dynamic-page__content {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-
-@container (min-width: 600px) {
-  .dynamic-page__content {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-@container (min-width: 1440px) {
-  .dynamic-page__content {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}

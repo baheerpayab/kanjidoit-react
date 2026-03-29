@@ -1,9 +1,3 @@
-/* @import "./table.css";
-@import "./fcl.css";
-@import "./dynamicPage.css";
-@import "./button.css";
-@import "./objectPage.css"; */
-
 :root {
   --font-en: "SAP72", sans-serif;
   --font-jp: "LINE Seed JP", sans-serif;
@@ -27,6 +21,11 @@
   --button-emphasized-backgroundColor: #0070f2;
   --button-emphasized-backgroundColor--hover: #0064D9;
   --button-emphasized-textColor: #fff;
+
+
+  --tab-textColor: #fff;
+  --tab-selected-textColor: #4db1ff;
+
 
   --sapContent_HeaderShadow: 0 .125rem .125rem 0 rgba(0, 0, 0, 0.2), inset 0 -0.0625rem 0 0 #2e3742;
 }
@@ -189,3 +188,29 @@ body {
   margin: 0 auto;
   /* max-width: 64rem; */
 }
+
+.no-padding {
+  padding: 0 !important;
+}
+
+@container (min-width: 0px) {
+  .responsive-padding {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+@container (min-width: 600px) {
+  .responsive-padding {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+@container (min-width: 1440px) {
+  .responsive-padding {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+}
+

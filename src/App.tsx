@@ -52,8 +52,27 @@ function App() {
     <DynamicPageHeader heading="Kanji Do It"></DynamicPageHeader>
   );
 
+  const tabs = [
+    {
+      value: "kanjiTab",
+      text: "Kanji",
+      content: kanjiTable,
+    },
+    {
+      value: "radicalsTab",
+      text: "Radicals",
+      content: radicalsTable,
+    },
+  ];
+
+  const iconTabBar = <IconTabBar id="iconTabBar" tabs={tabs}></IconTabBar>;
+
   const dynamicPage = (
-    <DynamicPage content={kanjiTable} dynamicPageHeader={dynamicPageHeader} />
+    <DynamicPage
+      content={iconTabBar}
+      dynamicPageHeader={dynamicPageHeader}
+      subheaderProvider="iconTabBar"
+    />
   );
 
   const objectAvatar = <Avatar text={selectedKanjiId}></Avatar>;

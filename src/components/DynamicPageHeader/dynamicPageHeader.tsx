@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { Toolbar } from "../Toolbar/toolbar";
 import "./dynamicPageHeader.css";
+import { SubheaderContext } from "../DynamicPage/dynamicPageContexts";
 
 export function DynamicPageHeader({
   heading,
@@ -12,8 +14,12 @@ export function DynamicPageHeader({
   headerContent?: React.ReactElement;
   actions?: React.ReactElement[];
 }) {
+  const hasSubheaderProvider = useContext(SubheaderContext);
+
   return (
-    <header className="dynamic-page-header">
+    <header
+      className={`dynamic-page-header ${hasSubheaderProvider ? "no-border" : ""}`}
+    >
       <div className="dynamic-page-header__title-container">
         <div className="dynamic-page-header__heading-container">
           <h2 className="dynamic-page-header__heading">{heading}</h2>
@@ -21,9 +27,12 @@ export function DynamicPageHeader({
         </div>
         {actions && <Toolbar items={actions}></Toolbar>}
       </div>
-      <div className="dynamic-page-header__header-content">
-        {headerContent}
-      </div>
+
+      {headerContent && (
+        <div className="dynamic-page-header__header-content">
+          {headerContent}
+        </div>
+      )}
     </header>
   );
 }
