@@ -1,6 +1,7 @@
 import type React from "react";
 import "./toolbar.css";
 import "../Table/table.css";
+import { Title } from "../Title/title";
 
 export function Toolbar({
   title,
@@ -13,7 +14,7 @@ export function Toolbar({
 }) {
   return (
     <div className={`toolbar ${className ?? ""}`}>
-      {title && <h5>{title}</h5>}
+      {title && <Title text={title} level="h5"></Title>}
       <span className="toolbar-spacer"></span>
       {items?.map((item) => item)}
     </div>

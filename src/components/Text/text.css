@@ -1,0 +1,16 @@
+.text--secondary {
+  color: var(--labelColor);
+  font-size: .875rem;
+  font-weight: normal;
+  white-space: nowrap;
+  cursor: text;
+}
+
+.text--primary {
+  color: var(--textColor);
+  font-size: .875rem;
+  font-weight: normal;
+  white-space: nowrap;
+  cursor: text;
+}
+
