@@ -21,7 +21,7 @@
 .splitter {
   flex: 0 0 0;
   height: auto;
-  width: 1rem;
+  min-width: 1rem;
   background-color: var(--app-background);
   box-shadow: inset .0625rem 0 0 0 #2e3742, inset -.0625rem 0 0 0 #2e3742;
 }
