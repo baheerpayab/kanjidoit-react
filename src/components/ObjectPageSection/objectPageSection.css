@@ -1,6 +1,7 @@
 
 .object-page-section {
   display: flex;
+  padding-top: 1.5rem;
   flex-direction: column; 
 }
 
