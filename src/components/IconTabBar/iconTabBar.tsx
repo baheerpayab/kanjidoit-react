@@ -12,11 +12,10 @@ export function IconTabBar({ id, tabs }: { id: string, tabs: IconTab[] }) {
   const [selectedTab, setSelectedTab] = useState(tabs[0].value);
   
   const isSubheaderProvider = useContext(SubheaderContext);
-  console.log(isSubheaderProvider);
 
   return (
-    <div id={id} className="icon-tab-bar">
-      <nav className="icon-tab-bar__nav-bar">
+    <div id={id} className={`icon-tab-bar`}>
+      <nav className={`icon-tab-bar__nav-bar`}>
         {tabs.map((tab) => (
           <div
             className={`icon-tab-bar__tab ${selectedTab === tab.value ? "icon-tab-bar__tab--selected" : ""}`}

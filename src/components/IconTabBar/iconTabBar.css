@@ -6,10 +6,13 @@
 
 .icon-tab-bar__nav-bar {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   flex-direction: row;
   box-shadow: var(--sapContent_HeaderShadow);
   background-color: var(--container-background);
+  z-index: 1;
+  position: sticky;
+  top: 0;
 }
 
 .icon-tab-bar__content {
@@ -19,7 +22,7 @@
 .icon-tab-bar__tab {
   width: fit-content;
   font-weight: 700;
-  padding: 1rem;
+  padding: 1rem 0.25rem;
   color: var(--tab-textColor);
   position: relative;
 }
