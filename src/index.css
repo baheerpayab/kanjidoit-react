@@ -28,8 +28,11 @@
 
   --focusColor: #4db1ff;
 
+  --scrollbar-thumbColor: #647891;
+
 
   --sapContent_HeaderShadow: 0 .125rem .125rem 0 rgba(0, 0, 0, 0.2), inset 0 -0.0625rem 0 0 #2e3742;
+
 }
 
 
@@ -147,8 +150,9 @@ button:hover {
 }
 
 html {
-  height: auto;
+  height: 100vh;
   width: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -210,3 +214,7 @@ body {
   }
 }
 
+body {
+  scrollbar-width: auto;
+  scrollbar-color: var(--scrollbar-thumbColor) transparent;
+}
