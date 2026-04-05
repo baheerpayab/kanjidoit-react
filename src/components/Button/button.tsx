@@ -6,11 +6,12 @@ type ButtonProps = {
   text: string;
   type: ButtonTypes;
   icon?: string;
+  onPress: () => void;
 };
 
-export function Button({ text, type, icon="" }: ButtonProps) {
+export function Button({ text, type, icon="", onPress }: ButtonProps) {
   return (
-    <button className={`button button--${type}`} type="button">
+    <button onClick={onPress} className={`button button--${type}`} type="button">
       {icon ?? <span className={`icon--${icon}`}></span>}
       <span>{text}</span>
     </button>

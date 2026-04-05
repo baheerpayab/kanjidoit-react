@@ -10,10 +10,26 @@
   height: 5rem;
   width: 5rem;
   min-width: 5rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
 }
 
-.avatar span {
-  font-size: 2.5rem;
+
+.avatar--S {
+  height: 3rem;
+  width: 3rem;
+  min-width: 3rem;
+  font-size: 1.5rem;
+}
+
+.avatar--M {
+  height: 4rem;
+  width: 4rem;
+  min-width: 4rem;
+  font-size: 2rem;
+}
+
+.avatar--transparent{
+  background-color: transparent;
+  color: var(--textColor);
 }

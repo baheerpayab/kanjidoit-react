@@ -11,12 +11,28 @@
 }
 
 .button--primary {
-  background-color: var(--button-emphasized-backgroundColor);
-  color: var(--button-emphasized-textColor);
+  background-color: var(--button-primary-backgroundColor);
+  color: var(--button-primary-textColor);
+  border: none;
+}
+
+.button--secondary {
+  background-color: var(--button-secondary-backgroundColor);
+  color: var(--button-secondary-textColor);
+  outline: var(--button-secondary-borderColor) 1px solid;
+}
+
+.button--tertiary {
+  background-color: var(--button-tertiary-backgroundColor);
+  color: var(--button-tertiary-textColor);
   border: none;
 }
 
 .button--primary:hover {
-  background-color: var(--button-emphasized-backgroundColor--hover);
+  background-color: var(--button-primary-backgroundColor--hover);
+}
+
+.button--tertiary:hover {
+  outline: var(--button-secondary-borderColor) 1px solid;
 }
 

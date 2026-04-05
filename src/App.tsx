@@ -12,29 +12,44 @@ import { Avatar } from "./components/Avatar/avatar";
 import { SearchField } from "./components/SearchField/searchField";
 import { IconTabBar } from "./components/IconTabBar/iconTabBar";
 import { getRadicals } from "./data/getRadicals";
+import { StandardListItem } from "./components/ListItem/listItem";
+import { Title } from "./components/Title/title";
+import { TextArea } from "./components/TextArea/textArea";
+import { ObjectPageHeader } from "./components/ObjectPageHeader/objectPageHeader";
+import { Button } from "./components/Button/button";
 
 function App() {
   type Kanji = {
-    kanji: string,
-    meaning: string,
-    radicals: string[]
+    kanji: string;
+    meaning: string;
+    radicals: string[];
+    mnemonic: string;
+    readings: {
+      onyomi: string[];
+      kunyomi: string[];
+    };
+    words: [
+      {
+        word: string;
+        meaning: string;
+        pronunciation: string;
+      },
+    ];
   };
 
   type Radical = {
     radical: string;
-    name: string,
-    kanji: string[]
-  }
+    name: string;
+    kanji: string[];
+  };
 
   const [kanji, setKanji] = useState<Kanji[]>([]);
   const [selectedKanjiId, setSelectedKanjiId] = useState("");
 
   const [radicals, setRadicals] = useState<Radical[]>([]);
   // const [selectedRadicalId, setSelectedRadicalId] = useState("");
-  
 
   const [search, setSearch] = useState("");
-  console.log(search);
 
   useEffect(() => {
     getKanji().then((result) => {
@@ -43,7 +58,7 @@ function App() {
 
     getRadicals().then((result) => {
       setRadicals(result);
-    })
+    });
   }, []);
 
   const tableSearch = (
@@ -54,7 +69,9 @@ function App() {
     ></SearchField>
   );
 
-  const kanjiTableToolbar = <Toolbar title="Kanji (<n>)" items={[tableSearch]} />;
+  const kanjiTableToolbar = (
+    <Toolbar title="Kanji (<n>)" items={[tableSearch]} />
+  );
 
   const kanjiTable = (
     <Table
@@ -73,7 +90,9 @@ function App() {
     ></Table>
   );
 
-  const radicalsTableToolbar = <Toolbar title="Radicals (<n>)" items={[tableSearch]} />;
+  const radicalsTableToolbar = (
+    <Toolbar title="Radicals (<n>)" items={[tableSearch]} />
+  );
 
   const radicalsTable = (
     <Table
@@ -119,26 +138,86 @@ function App() {
     />
   );
 
+  // Object Page
+
+  const selectedKanji = kanji.find((e) => e.kanji === selectedKanjiId);
+
   const objectAvatar = <Avatar text={selectedKanjiId}></Avatar>;
 
   const objectPageHeader = (
-    <DynamicPageHeader
-      heading={kanji.find((e) => e.kanji === selectedKanjiId)?.meaning ?? ""}
+    <ObjectPageHeader
+      heading={selectedKanji?.meaning ?? ""}
       subheading="Kanji"
       headerContent={objectAvatar}
-    ></DynamicPageHeader>
+      actions={[<Button text="Mark as Learned" type="primary" onPress={()=>{}}></Button>]}
+    ></ObjectPageHeader>
+  );
+
+  const wordsList = (
+    <div style={{ display: "block"}}>
+      {selectedKanji?.words.map((e) => (
+        <StandardListItem
+          text={e.word}
+          byline={`${e.meaning} — ${e.pronunciation}`}
+        ></StandardListItem>
+      ))}
+    </div>
+  );
+
+  const radicalsList = (
+    <div style={{ display: "block"}}>
+      {selectedKanji?.radicals.map((e) => (
+        <StandardListItem text={e}></StandardListItem>
+      ))}
+    </div>
+  );
+
+  const readingsSectionContent = (
+    <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+      <Title text="On'yomi" level="h6"></Title>
+      <div style={{ display: "block", paddingBottom: "1rem"}}>
+        {selectedKanji?.readings.onyomi.map((e) => (
+          <StandardListItem text={e}></StandardListItem>
+        ))}
+      </div>
+      <Title text="Kun'yomi" level="h6"></Title>
+      <div style={{ display: "block"}}>
+        {selectedKanji?.readings.kunyomi.map((e) => (
+          <StandardListItem text={e}></StandardListItem>
+        ))}
+      </div>
+    </div>
+  );
+
+  const textArea = (
+    <TextArea
+      showCharacterCount={true}
+      placeholder="Write a mneumonic to memorise this Kanji"
+      characterLimit={256}
+      rows={5}
+    ></TextArea>
   );
 
   const objectPageSections = [
-    <ObjectPageSection heading="Section" content={"Hello"}></ObjectPageSection>,
-    <ObjectPageSection heading="Section" content={"Hello"}></ObjectPageSection>,
-    <ObjectPageSection heading="Section" content={"Hello"}></ObjectPageSection>,
-    <ObjectPageSection heading="Section" content={"Hello"}></ObjectPageSection>,
+    <ObjectPageSection
+      heading="Readings"
+      content={readingsSectionContent}
+    ></ObjectPageSection>,
+    <ObjectPageSection
+      heading="Mnemonic"
+      content={textArea}
+      actions={[<Button text="Edit" type="tertiary" onPress={()=>{}}></Button>]}
+    ></ObjectPageSection>,
+    <ObjectPageSection
+      heading="Radicals"
+      content={radicalsList}
+    ></ObjectPageSection>,
+    <ObjectPageSection heading="Words" content={wordsList}></ObjectPageSection>,
   ];
 
   const objectPage = (
     <ObjectPage
-      dynamicPageHeader={objectPageHeader}
+      objectPageHeader={objectPageHeader}
       content={objectPageSections}
     ></ObjectPage>
   );

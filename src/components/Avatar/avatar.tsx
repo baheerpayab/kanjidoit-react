@@ -1,9 +1,9 @@
 import "./avatar.css";
 
-export function Avatar({text}:{text: string}) {
+export function Avatar({text, size = "L", color = "accent6"}:{text: string, size?: string, color?: string}) {
   return (
-    <div className="avatar">
-      <span>{text.slice(0, 2)}</span>
+    <div className={`avatar avatar--${size} avatar--${color}`}>
+      <span>{text}</span>
     </div>
   )
 }

@@ -18,9 +18,17 @@
   --avatar-textColor: #a6e0ff;
   --labelColor: #8396a8;
 
-  --button-emphasized-backgroundColor: #0070f2;
-  --button-emphasized-backgroundColor--hover: #0064D9;
-  --button-emphasized-textColor: #fff;
+  --button-primary-backgroundColor: #0070f2;
+  --button-primary-backgroundColor--hover: #0064D9;
+  --button-primary-textColor: #fff;
+  --button-secondary-borderColor: #3A4A5A;
+  --button-secondary-backgroundColor: #1C242C;
+  --button-secondary-textColor: #4DB1FF;
+  --button-tertiary-borderColor: transparent;
+  --button-tertiary-backgroundColor: transparent;
+  --button-tertiary-textColor: #4DB1FF;
+
+
 
 
   --tab-textColor: #fff;
@@ -97,7 +105,25 @@
   font-style: normal;
 }
 
+html {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
 
+body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: var(--app-background);
+  color: var(--textColor);
+  font-family: var(--font-en);
+  font-size: 0.875rem;
+
+  scrollbar-width: auto;
+  scrollbar-color: var(--scrollbar-thumbColor) transparent;
+}
 
 .icon--nav::before {
   content: "\e066"; 
@@ -149,45 +175,6 @@ button:hover {
   font-size: 0.875rem;
 }
 
-html {
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
-
-body {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background: var(--app-background);
-  color: var(--textColor);
-  font-family: var(--font-en);
-  font-size: 0.875rem;
-}
-
-
-
-
-
-.kanji-container {
-  flex-direction: row;
-  gap: 1rem;
-}
-
-.splitter {
-  height: 100%;
-  min-width: 1rem;
-  background-color: var(--app-background);
-  box-shadow: inset .0625rem 0 0 0 #2e3742, inset -.0625rem 0 0 0 #2e3742;
-
-}
-
-.main {
-  height: 100%;
-  margin: 0 auto;
-  /* max-width: 64rem; */
-}
 
 .no-padding {
   padding: 0 !important;
@@ -214,7 +201,4 @@ body {
   }
 }
 
-body {
-  scrollbar-width: auto;
-  scrollbar-color: var(--scrollbar-thumbColor) transparent;
-}
+
