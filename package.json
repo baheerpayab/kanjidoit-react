@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@sap-theming/theming-base-content": "^11.34.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
