@@ -1,0 +1,112 @@
+
+
+/* Black */
+@font-face {
+  font-family: 'SAP72';
+  src: url('../../assets/fonts/72-Black-full.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'SAP72';
+  src: url('../../assets/fonts/72-Bold-full.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold Italic */
+@font-face {
+  font-family: 'SAP72';
+  src: url('../../assets/fonts/72-BoldItalic-full.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Regular */
+@font-face {
+  font-family: 'SAP72';
+  src: url('../../assets/fonts/72-Regular-full.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Italic */
+@font-face {
+  font-family: 'SAP72';
+  src: url('../../assets/fonts/72-Italic-full.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Semibold */
+@font-face {
+  font-family: 'SAP72';
+  src: url('../../assets/fonts/72-Semibold-full.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SAP-Icons";
+  src: url("../../assets/fonts/SAP-icons.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root{
+  --font-en: "SAP72", sans-serif;
+  --font-jp: "LINE Seed JP", sans-serif;
+
+  --app-background: #12171c;
+  --textColor: #fff;
+  --container-background: #1d232a;
+  --list-backgroundColor: #1d232a;
+  --list-selectionBackgroundColor: #1d2d3e;
+  --list-selectionBorderColor: #4db1ff;
+  --list-hover-backgroundColor: #222b35;
+  --list-borderColor: #2e3742;
+  --list-headerBorderColor: #7583a5;
+  --container-titleBorderColor: #758ea5;
+  --icon-nonInteractiveColor: #a9b4be;
+
+  --avatar-background: #0054cc;
+  --avatar-textColor: #a6e0ff;
+  --labelColor: #8396a8;
+
+  --button-primary-backgroundColor: #0070f2;
+  --button-primary-backgroundColor--hover: #0064D9;
+  --button-primary-textColor: #fff;
+  --button-secondary-borderColor: #3A4A5A;
+  --button-secondary-backgroundColor: #1C242C;
+  --button-secondary-textColor: #4DB1FF;
+  --button-tertiary-borderColor: transparent;
+  --button-tertiary-backgroundColor: transparent;
+  --button-tertiary-textColor: #4DB1FF;
+
+
+
+
+  --tab-textColor: #fff;
+  --tab-selected-textColor: #4db1ff;
+
+  --focusColor: #4db1ff;
+
+  --scrollbar-thumbColor: #647891;
+
+
+  --sapContent_HeaderShadow: 0 .125rem .125rem 0 rgba(0, 0, 0, 0.2), inset 0 -0.0625rem 0 0 #2e3742;
+
+}
+
+
+
+
+
