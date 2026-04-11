@@ -9,20 +9,26 @@ import type { Kanji } from "../../types/kanji";
 
 type kanjiObjectPageProps = {
   kanji: Kanji;
+  setState: () => void;
 };
 
-export function KanjiObjectPage({ kanji }: kanjiObjectPageProps) {
+export function KanjiObjectPage({ kanji, setState }: kanjiObjectPageProps) {
 
   const header = (
     <ObjectPageHeader
       heading={kanji.meaning}
       subheading="Kanji"
       actions={[
+        // <Button
+        //   text="Mark as Learned"
+        //   type="primary"
+        //   onPress={() => {}}
+        // ></Button>,
         <Button
-          text="Mark as Learned"
-          type="primary"
-          onPress={() => {}}
-        ></Button>,
+          icon="decline"
+          type="tertiary"
+          onPress = {setState}
+        ></Button>
       ]}
     ></ObjectPageHeader>
   );

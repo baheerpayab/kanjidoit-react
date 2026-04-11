@@ -1,19 +1,21 @@
-import "./button.css";
+import "./Button.css";
 
 type ButtonTypes = "primary" | "secondary" | "tertiary";
 
 type ButtonProps = {
-  text: string;
-  type: ButtonTypes;
+  text?: string;
+  type?: ButtonTypes;
   icon?: string;
   onPress: () => void;
 };
 
-export function Button({ text, type, icon="", onPress }: ButtonProps) {
+export function Button({ text="", type="tertiary", icon="", onPress }: ButtonProps) {
   return (
-    <button onClick={onPress} className={`button button--${type}`} type="button">
-      {icon ?? <span className={`icon--${icon}`}></span>}
-      <span>{text}</span>
+    <button onClick={onPress} className="button" type="button">
+      <span className={`button__inner button__inner--${type}`}>
+      {icon && <span className={`icon--${icon} button__icon`}></span>}
+      {text && <span>{text}</span>}
+      </span>
     </button>
   );
 }

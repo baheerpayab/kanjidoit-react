@@ -90,6 +90,11 @@
   --button-tertiary-borderColor: transparent;
   --button-tertiary-backgroundColor: transparent;
   --button-tertiary-textColor: #4DB1FF;
+  --button-tertiary-backgroundColor--hover: #222B35;
+  --button-backgroundColor--down: #213131;
+  --button-borderColor--down: #4DB1FF;
+
+
 
 
 
@@ -121,6 +126,12 @@
 
 .icon--sound-loud::before {
   content: "\e228"; 
+  font-family: "SAP-Icons";
+  display: inline-block;
+}
+
+.icon--decline::before {
+  content: "\e03e"; 
   font-family: "SAP-Icons";
   display: inline-block;
 }

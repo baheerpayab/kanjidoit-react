@@ -1,38 +1,71 @@
 .button {
+  background-color: unset;
+  border: none;
+  
   display: inline-block;
   width: auto;
-  height: auto;
+  height: 2rem;
+
   font-size: 0.875rem;
+  line-height: 1rem;
   font-weight: 600;
-  padding: 0.3125rem 0.5rem;
-  margin: 0.1875rem 0;
-  border-radius: 0.5rem;
-  
+
+  padding: 0.1875rem 0;
 }
 
-.button--primary {
+.button__inner {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-width: 2rem;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+
+.button__inner--primary {
   background-color: var(--button-primary-backgroundColor);
   color: var(--button-primary-textColor);
-  border: none;
 }
 
-.button--secondary {
+.button__inner--secondary {
   background-color: var(--button-secondary-backgroundColor);
   color: var(--button-secondary-textColor);
-  outline: var(--button-secondary-borderColor) 1px solid;
+  border: var(--button-secondary-borderColor) 1px solid;
 }
 
-.button--tertiary {
+.button__inner--tertiary {
   background-color: var(--button-tertiary-backgroundColor);
   color: var(--button-tertiary-textColor);
-  border: none;
 }
 
-.button--primary:hover {
+.button:hover .button__inner--primary {
   background-color: var(--button-primary-backgroundColor--hover);
 }
 
-.button--tertiary:hover {
-  outline: var(--button-secondary-borderColor) 1px solid;
+.button:hover .button__inner--tertiary {
+  background-color: var(--button-tertiary-backgroundColor--hover);
+  border: var(--button-secondary-borderColor) 1px solid;
 }
+
+.button:active .button__inner--tertiary {
+  background-color: var(--button-backgroundColor--down);
+  border: var(--button-borderColor--down) 1px solid;
+  color: var(--button-tertiary-textColor);
+}
+
+.button__icon {
+  display: inline-flex;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-right: .5rem;
+  font-weight: 500;
+}
+
+.button__icon:only-child {
+  margin-right: 0;
+}
+
 

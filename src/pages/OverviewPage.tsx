@@ -11,7 +11,6 @@ import type { Kanji } from "../types/kanji";
 import { KanjiObjectPage } from "../features/kanji/KanjiObjectPage";
 
 export function OverviewPage() {
-
   // ——— State ———
   const [kanji, setKanji] = useState<Kanji[]>([]);
   const [selectedKanjiId, setSelectedKanjiId] = useState("");
@@ -113,7 +112,7 @@ export function OverviewPage() {
   if (!selectedKanji) {
     detailPage = <div></div>;
   } else {
-    detailPage = <KanjiObjectPage kanji={selectedKanji}></KanjiObjectPage>;
+    detailPage = <KanjiObjectPage kanji={selectedKanji} setState={()=>{setSelectedKanjiId("")}}></KanjiObjectPage>;
   }
 
   return (
