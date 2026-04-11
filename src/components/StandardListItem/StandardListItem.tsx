@@ -1,5 +1,5 @@
 import { Avatar } from "../Avatar/Avatar";
-import "./listItem.css";
+import "./StandardListItem.css";
 import { Text } from "../Text/Text";
 
 type Props = {
