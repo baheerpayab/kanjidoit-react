@@ -1,0 +1,14 @@
+.object-page__content {
+  display: flex;
+  height: fit-content;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.object-page {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  border: transparent;
+  container-type: inline-size;
+}

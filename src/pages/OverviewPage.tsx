@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { DynamicPage } from "../components/DynamicPage/dynamicPage";
-import { DynamicPageHeader } from "../components/DynamicPageHeader/dynamicPageHeader";
-import { Table } from "../components/Table/table";
-import { Toolbar } from "../components/Toolbar/toolbar";
+import { DynamicPage } from "../components/DynamicPage/DynamicPage";
+import { DynamicPageHeader } from "../components/DynamicPageHeader/DynamicPageHeader";
+import { Table } from "../components/Table/Table";
+import { Toolbar } from "../components/Toolbar/Toolbar";
 import { getKanji } from "../data/getKanji";
-import { FlexibleColumnLayout } from "../components/FlexibleColumnLayout/flexibleColumnLayout";
-import { SearchField } from "../components/SearchField/searchField";
-import { IconTabBar } from "../components/IconTabBar/iconTabBar";
+import { FlexibleColumnLayout } from "../components/FlexibleColumnLayout/FlexibleColumnLayout";
+import { SearchField } from "../components/SearchField/SearchField";
+import { IconTabBar } from "../components/IconTabBar/IconTabBar";
 import type { Kanji } from "../types/kanji";
 import { KanjiObjectPage } from "../features/kanji/KanjiObjectPage";
 

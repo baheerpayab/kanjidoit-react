@@ -1,10 +1,10 @@
-import { Button } from "../../components/Button/button";
-import { StandardListItem } from "../../components/ListItem/listItem";
-import { ObjectPage } from "../../components/ObjectPage/objectPage";
-import { ObjectPageHeader } from "../../components/ObjectPageHeader/objectPageHeader";
-import { ObjectPageSection } from "../../components/ObjectPageSection/objectPageSection";
-import { TextArea } from "../../components/TextArea/textArea";
-import { Title } from "../../components/Title/title";
+import { Button } from "../../components/Button/Button";
+import { StandardListItem } from "../../components/StandardListItem/StandardListItem";
+import { ObjectPage } from "../../components/ObjectPage/ObjectPage";
+import { ObjectPageHeader } from "../../components/ObjectPageHeader/ObjectPageHeader";
+import { ObjectPageSection } from "../../components/ObjectPageSection/ObjectPageSection";
+import { TextArea } from "../../components/TextArea/TextArea";
+import { Title } from "../../components/Title/Title";
 import type { Kanji } from "../../types/kanji";
 
 type kanjiObjectPageProps = {
@@ -12,7 +12,7 @@ type kanjiObjectPageProps = {
 };
 
 export function KanjiObjectPage({ kanji }: kanjiObjectPageProps) {
-  
+
   const header = (
     <ObjectPageHeader
       heading={kanji.meaning}

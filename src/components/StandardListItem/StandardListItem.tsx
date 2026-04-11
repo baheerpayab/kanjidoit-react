@@ -1,6 +1,6 @@
-import { Avatar } from "../Avatar/avatar";
+import { Avatar } from "../Avatar/Avatar";
 import "./listItem.css";
-import { Text } from "../Text/text";
+import { Text } from "../Text/Text";
 
 type Props = {
   text: string;
