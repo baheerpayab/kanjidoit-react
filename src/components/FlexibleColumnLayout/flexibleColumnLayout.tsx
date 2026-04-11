@@ -1,17 +1,23 @@
 import "./flexibleColumnLayout.css";
 
 export function FlexibleColumnLayout({
-  masterColumnPage,
-  detailColumnPage,
+  masterColumn,
+  detailColumn,
+  showDetailColumn,
 }: {
-  masterColumnPage: React.ReactElement;
-  detailColumnPage: React.ReactElement;
+  masterColumn: React.ReactElement;
+  detailColumn: React.ReactElement;
+  showDetailColumn: boolean;
 }) {
   return (
     <div className="fcl">
-      <div className="fcl__master">{masterColumnPage}</div>
-      <div className="splitter"></div>
-      <div className="fcl__detail">{detailColumnPage}</div>
+      <div className="fcl__master">{masterColumn}</div>
+      {showDetailColumn && (
+        <>
+          <div className="splitter"></div>
+          <div className="fcl__detail">{detailColumn}</div>
+        </>
+      )}
     </div>
   );
 }
