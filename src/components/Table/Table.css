@@ -4,7 +4,7 @@
   flex-direction: column;
   height: auto;
   width: 100%;
-  background-color: var(--list-backgroundColor);
+  background-color: var(--list-bg);
   border-radius: 0.75rem;
   padding-bottom: 0.5rem;
 }
@@ -22,7 +22,7 @@
   padding: 0 1rem;
   align-items: center;
   flex-direction: row;
-  border-bottom: 1px solid var(--list-headerBorderColor);
+  border-bottom: 1px solid var(--list-header-border);
 }
 
 .table__row {
@@ -34,15 +34,15 @@
 }
 
 .table__row--clickable:hover {
-  background-color: var(--list-hover-backgroundColor);
+  background-color: var(--list-bg-hover);
   cursor: pointer;
 }
 
 .table__row--selected .table__cell {
   box-sizing: border-box;
 
-  background-color: var(--list-selectionBackgroundColor);
-  border-bottom: 1px solid var(--list-selectionBorderColor);
+  background-color: var(--list-bg-selected);
+  border-bottom: 1px solid var(--list-border-selected);
 }
 
 .table__header-cell {
@@ -52,7 +52,7 @@
 
   text-align: start;
   padding: 0.25rem 0.5rem;
-  border-bottom: 2px solid var(--list-borderColor);
+  border-bottom: 2px solid var(--list-border);
   font-weight: 600;
 }
 
@@ -66,7 +66,7 @@
   font-size: 0.875rem;
   line-height: 1.5rem;
   padding: 0.25rem 0.5rem;
-  border-bottom: 1px solid var(--list-borderColor);
+  border-bottom: 1px solid var(--list-border);
   overflow: clip;
 }
 
@@ -80,7 +80,7 @@
   font-style: normal;
   font-size: 0.75rem;
   height: 0.75rem;
-  color: var(--icon-nonInteractiveColor);
+  color: var(--icon);
 }
 
 

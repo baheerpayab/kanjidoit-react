@@ -22,6 +22,6 @@
   flex: 0 0 0;
   height: auto;
   min-width: 1rem;
-  background-color: var(--app-background);
+  background-color: var(--app-bg);
   box-shadow: inset .0625rem 0 0 0 #2e3742, inset -.0625rem 0 0 0 #2e3742;
 }

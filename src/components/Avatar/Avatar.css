@@ -1,6 +1,6 @@
 .avatar {
-  background-color: var(--avatar-background);
-  color: var(--avatar-textColor);
+  background-color: var(--avatar-bg);
+  color: var(--avatar-text);
   border-radius: 0.75rem;
   display: flex;
   flex: 0 0 0;
@@ -31,5 +31,5 @@
 
 .avatar--transparent{
   background-color: transparent;
-  color: var(--textColor);
+  color: var(--text-primary);
 }

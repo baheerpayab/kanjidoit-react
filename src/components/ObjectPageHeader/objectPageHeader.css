@@ -12,16 +12,16 @@
 .object-page-header {
   display: flex;
   flex-direction: column;
-  background-color: var(--container-background);
+  background-color: var(--container-bg);
   padding: 1rem;
   gap: 1rem;
-  box-shadow: var(--sapContent_HeaderShadow);
+  box-shadow: var(--header-shadow);
 }
 
 .object-page-header__title-container {
   display: flex;
   flex-direction: row;
-  background-color: var(--container-background);
+  background-color: var(--container-bg);
   gap: 1rem;
 }
 

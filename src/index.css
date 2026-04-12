@@ -1,26 +1,29 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html {
-  height: 100vh;
-  width: 100%;
+  height: 100%;
   overflow: hidden;
+  width: 100%;
 }
 
 body {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background: var(--app-background);
-  color: var(--textColor);
+  background: var(--app-bg);
+  color: var(--text-primary);
   font-family: var(--font-en);
   font-size: 0.875rem;
-
+  height: 100%;
+  margin: 0;
+  padding: 0;
   scrollbar-width: auto;
-  scrollbar-color: var(--scrollbar-thumbColor) transparent;
-}
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+  width: 100%;
 
-body * {
-  font: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -32,16 +35,18 @@ p {
   margin: 0;
 }
 
-input, textarea {
-  font: inherit;
+input,
+textarea {
+  background: none;
   border: none;
-  color: var(--textColor);
+  font: inherit;
+  color: inherit;
 }
 
 textarea:focus,
 input:focus {
-  outline: none;
   box-shadow: none;
+  outline: none;
 }
 
 button:hover {

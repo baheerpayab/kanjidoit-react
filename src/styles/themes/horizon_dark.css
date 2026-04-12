@@ -1,5 +1,4 @@
 
-
 /* Black */
 @font-face {
   font-family: 'SAP72';
@@ -63,53 +62,55 @@
 
 :root{
   --font-en: "SAP72", sans-serif;
-  --font-jp: "LINE Seed JP", sans-serif;
 
-  --app-background: #12171c;
-  --textColor: #fff;
-  --container-background: #1d232a;
-  --list-backgroundColor: #1d232a;
-  --list-selectionBackgroundColor: #1d2d3e;
-  --list-selectionBorderColor: #4db1ff;
-  --list-hover-backgroundColor: #222b35;
-  --list-borderColor: #2e3742;
-  --list-headerBorderColor: #7583a5;
-  --container-titleBorderColor: #758ea5;
-  --icon-nonInteractiveColor: #a9b4be;
+  --app-bg: #12171c;
 
-  --avatar-background: #0054cc;
-  --avatar-textColor: #a6e0ff;
-  --labelColor: #8396a8;
+  /* Text */
+  --text-primary: #fff;
+  --text-secondary: #8396a8;
 
-  --button-primary-backgroundColor: #0070f2;
-  --button-primary-backgroundColor--hover: #0064D9;
-  --button-primary-textColor: #fff;
-  --button-secondary-borderColor: #3A4A5A;
-  --button-secondary-backgroundColor: #1C242C;
-  --button-secondary-textColor: #4DB1FF;
-  --button-tertiary-borderColor: transparent;
-  --button-tertiary-backgroundColor: transparent;
-  --button-tertiary-textColor: #4DB1FF;
-  --button-tertiary-backgroundColor--hover: #222B35;
-  --button-backgroundColor--down: #213131;
-  --button-borderColor--down: #4DB1FF;
+  /* Container */
+  --container-bg: #1d232a;
 
+  /* List */
+  --list-bg: #1d232a;
+  --list-bg-selected: #1d2d3e;
+  --list-border-selected: #4db1ff;
+  --list-bg-hover: #222b35;
+  --list-border: #2e3742;
+  --list-header-border: #758ea5;
+  --icon: #a9b4be;
 
+  /* Avatar */
+  --avatar-bg: #0054cc;
+  --avatar-text: #a6e0ff;
 
+  /* Button */
+  --button-primary-bg: #0070f2;
+  --button-primary-bg-hover: #0064D9;
+  --button-primary-text: #fff;
+  --button-secondary-border: #3A4A5A;
+  --button-secondary-bg: #1C242C;
+  --button-secondary-text: #4DB1FF;
+  --button-tertiary-border: transparent;
+  --button-tertiary-bg: transparent;
+  --button-tertiary-text: #4DB1FF;
+  --button-tertiary-bg-hover: #222B35;
+  --button-bg-active: #213131;
+  --button-border-active: #4DB1FF;
+  --button-text-active: #4DB1FF;
 
+  /* Tab Bar */
+  --tab-text: #fff;
+  --tab-text-selected: #4db1ff;
+  --tab-border-selected: #4db1ff;
 
+  /* Input */
+  --input-border-focus: #4db1ff;
 
-  --tab-textColor: #fff;
-  --tab-selected-textColor: #4db1ff;
-
-  --focusColor: #4db1ff;
-
-  --scrollbar-thumbColor: #647891;
-
-
-  --sapContent_HeaderShadow: 0 .125rem .125rem 0 rgba(0, 0, 0, 0.2), inset 0 -0.0625rem 0 0 #2e3742;
-
-  
+  /* Misc */
+  --scrollbar-thumb: #647891;
+  --header-shadow: 0 .125rem .125rem 0 rgba(0, 0, 0, 0.2), inset 0 -0.0625rem 0 0 #2e3742;
 }
 
 .icon--nav::before {

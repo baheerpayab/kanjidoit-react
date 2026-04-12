@@ -8,8 +8,8 @@
   display: flex;
   gap: 2rem;
   flex-direction: row;
-  box-shadow: var(--sapContent_HeaderShadow);
-  background-color: var(--container-background);
+  box-shadow: var(--header-shadow);
+  background-color: var(--container-bg);
 }
 
 .icon-tab-header__content {
@@ -20,17 +20,17 @@
   width: fit-content;
   font-weight: 700;
   padding: 1rem 0.25rem;
-  color: var(--tab-textColor);
+  color: var(--tab-text);
   position: relative;
 }
 
 .icon-tab-header__tab--selected {
-  color: var(--tab-selected-textColor);
+  color: var(--tab-text-selected);
 }
 
 .icon-tab-header__tab:hover {
   cursor: pointer;
-  color: var(--tab-selected-textColor);
+  color: var(--tab-text-selected);
 }
 
 .icon-tab-header__tab--selected::after{
@@ -40,7 +40,7 @@
   right: 0;
   bottom: 0;
   height: 3px;
-  background-color: var(--tab-selected-textColor);
+  background-color: var(--tab-text-selected);
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }

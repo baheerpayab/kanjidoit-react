@@ -26,34 +26,34 @@
 }
 
 .button__inner--primary {
-  background-color: var(--button-primary-backgroundColor);
-  color: var(--button-primary-textColor);
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
 }
 
 .button__inner--secondary {
-  background-color: var(--button-secondary-backgroundColor);
-  color: var(--button-secondary-textColor);
-  border: var(--button-secondary-borderColor) 1px solid;
+  background-color: var(--button-secondary-bg);
+  color: var(--button-secondary-text);
+  border: var(--button-secondary-border) 1px solid;
 }
 
 .button__inner--tertiary {
-  background-color: var(--button-tertiary-backgroundColor);
-  color: var(--button-tertiary-textColor);
+  background-color: var(--button-tertiary-bg);
+  color: var(--button-tertiary-text);
 }
 
 .button:hover .button__inner--primary {
-  background-color: var(--button-primary-backgroundColor--hover);
+  background-color: var(--button-primary-bg--hover);
 }
 
 .button:hover .button__inner--tertiary {
-  background-color: var(--button-tertiary-backgroundColor--hover);
-  border: var(--button-secondary-borderColor) 1px solid;
+  background-color: var(--button-tertiary-bg--hover);
+  border: var(--button-secondary-border) 1px solid;
 }
 
 .button:active .button__inner--tertiary {
-  background-color: var(--button-backgroundColor--down);
-  border: var(--button-borderColor--down) 1px solid;
-  color: var(--button-tertiary-textColor);
+  background-color: var(--button-bg-active);
+  border: var(--button-border-active) 1px solid;
+  color: var(--button-text-active);
 }
 
 .button__icon {
