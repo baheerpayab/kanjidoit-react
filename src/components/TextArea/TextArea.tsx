@@ -29,11 +29,11 @@ export function TextArea({
           }}
         ></textarea>
       </div>
-        {showCharacterCount && (
-          <span className="character-count">
-            {charCount} characters remaining
-          </span>
-        )}
+      {showCharacterCount && (
+        <span className="character-count">
+          {charCount} characters remaining
+        </span>
+      )}
     </div>
   );
 }

@@ -1,6 +1,10 @@
 import "./searchField.css";
 
-export function SearchField({ onChange }: { onChange: (input: string) => void }) {
+export function SearchField({
+  onChange,
+}: {
+  onChange: (input: string) => void;
+}) {
   return (
     <div className="search-field input-field">
       <input

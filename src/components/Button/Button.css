@@ -1,7 +1,7 @@
 .button {
   background-color: unset;
   border: none;
-  
+
   display: inline-block;
   width: auto;
   height: 2rem;
@@ -60,11 +60,9 @@
   display: inline-flex;
   font-size: 1rem;
   line-height: 1.5rem;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .button__icon:only-child {
   margin-right: 0;
 }
-
-

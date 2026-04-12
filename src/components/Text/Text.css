@@ -1,6 +1,6 @@
 .text--secondary {
   color: var(--text-secondary);
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: normal;
   white-space: nowrap;
   cursor: text;
@@ -8,9 +8,8 @@
 
 .text--primary {
   color: var(--text-primary);
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: normal;
   white-space: nowrap;
   cursor: text;
 }
-

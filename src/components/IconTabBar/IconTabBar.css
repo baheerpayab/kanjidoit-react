@@ -36,8 +36,8 @@
   color: var(--tab-text-selected);
 }
 
-.icon-tab-bar__tab--selected::after{
-  content: '';
+.icon-tab-bar__tab--selected::after {
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
@@ -47,7 +47,6 @@
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
-
 
 @container (min-width: 0px) {
   .icon-tab-bar__nav-bar {

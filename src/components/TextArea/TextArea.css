@@ -27,7 +27,7 @@
 }
 
 .text-area__text-area-wrapper::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
@@ -47,7 +47,6 @@
   display: block;
 }
 
-
 .character-count {
   padding: 0.3725rem 0.125rem 0.5rem;
   float: right;
@@ -55,5 +54,3 @@
   font-size: 0.75rem;
   color: var(--text-secondary);
 }
-
-

@@ -11,7 +11,6 @@ export function DynamicPage({
   dynamicPageHeader: React.ReactElement<typeof DynamicPageHeader>;
   subheaderProvider?: string;
 }) {
-
   let subheader;
   if (subheaderProvider) {
     subheader = document.getElementById(subheaderProvider);
