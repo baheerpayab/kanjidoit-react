@@ -19,3 +19,4 @@ export function Button({ text="", type="tertiary", icon="", onPress }: ButtonPro
     </button>
   );
 }
+

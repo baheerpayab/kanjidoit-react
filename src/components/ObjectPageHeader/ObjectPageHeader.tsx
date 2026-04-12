@@ -32,26 +32,26 @@ export function ObjectPageHeader({
     });
   });
 
-  return (<>
-    <header
-      className={`object-page-header ${shouldRenderHeader ? "no-border" : ""}`}
-    >
-      <div className="object-page-header__title-container">
-        <div className="object-page-header__heading-container">
-          <h2 className="object-page-header__heading">{heading}</h2>
-          <p className="object-page-header__subheading">{subheading}</p>
+  return (
+    <>
+      <header
+        className={`object-page-header ${shouldRenderHeader ? "no-border" : ""}`}
+      >
+        <div className="object-page-header__title-container">
+          <div className="object-page-header__heading-container">
+            <h2 className="object-page-header__heading">{heading}</h2>
+            <p className="object-page-header__subheading">{subheading}</p>
+          </div>
+          {actions && <Toolbar items={actions}></Toolbar>}
         </div>
-        {actions && <Toolbar items={actions}></Toolbar>}
-      </div>
 
-      {headerContent && (
-        <div className="object-page-header__header-content">
-          {headerContent}
-        </div>
-      )}
-      
-    </header>
-    {shouldRenderHeader && <IconTabHeader tabs={tabs}></IconTabHeader>}
+        {headerContent && (
+          <div className="object-page-header__header-content">
+            {headerContent}
+          </div>
+        )}
+      </header>
+      {shouldRenderHeader && <IconTabHeader tabs={tabs}></IconTabHeader>}
     </>
   );
 }

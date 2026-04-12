@@ -12,7 +12,8 @@
   padding: 1rem;
 }
 
-.standard-list-item:hover, .standard-list-item:hover *  {
+.standard-list-item:hover,
+.standard-list-item:hover * {
   background-color: var(--list-bg-hover);
 }
 

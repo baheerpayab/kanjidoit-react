@@ -1,8 +1,7 @@
-
 .object-page-section {
   display: flex;
   padding-top: 1.5rem;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 .object-page-section__body {
@@ -16,6 +15,6 @@
   background-color: var(--container-bg);
 }
 
-.object-page-section__toolbar h5{
+.object-page-section__toolbar h5 {
   font-size: 1.25rem;
 }

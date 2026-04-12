@@ -14,7 +14,6 @@ export function ObjectPage({
   content: React.ReactElement<ObjectPageSectionProps>[];
   objectPageHeader: React.ReactElement<typeof ObjectPageHeader>;
 }) {
-
   // Collect section names for shared context
   const sectionNames: string[] = [];
 

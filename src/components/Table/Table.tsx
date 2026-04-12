@@ -67,3 +67,4 @@ export function Table<T extends Record<string, unknown>>({
     </div>
   );
 }
+

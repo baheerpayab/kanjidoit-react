@@ -3,14 +3,14 @@ import "./iconTabBar.css";
 import { SubheaderContext } from "../DynamicPage/DynamicPageContexts";
 
 type IconTab = {
-  value: string,
+  value: string;
   text: string;
   content: React.ReactNode;
 };
 
-export function IconTabBar({ id, tabs }: { id: string, tabs: IconTab[] }) {
+export function IconTabBar({ id, tabs }: { id: string; tabs: IconTab[] }) {
   const [selectedTab, setSelectedTab] = useState(tabs[0].value);
-  
+
   const isSubheaderProvider = useContext(SubheaderContext);
 
   return (
@@ -25,7 +25,9 @@ export function IconTabBar({ id, tabs }: { id: string, tabs: IconTab[] }) {
           </div>
         ))}
       </nav>
-      <div className={`icon-tab-bar__content ${isSubheaderProvider ? "responsive-padding" : ""}`}>
+      <div
+        className={`icon-tab-bar__content ${isSubheaderProvider ? "responsive-padding" : ""}`}
+      >
         {tabs.find((tab) => tab.value === selectedTab)?.content}
       </div>
     </div>
