@@ -6,6 +6,7 @@ import { ObjectPageSection } from "../../components/ObjectPageSection/ObjectPage
 import { TextArea } from "../../components/TextArea/TextArea";
 import { Title } from "../../components/Title/Title";
 import type { Kanji } from "../../types/kanji";
+import { Avatar } from "../../components/Avatar/Avatar";
 
 type kanjiObjectPageProps = {
   kanji: Kanji;
@@ -13,70 +14,66 @@ type kanjiObjectPageProps = {
 };
 
 export function KanjiObjectPage({ kanji, setState }: kanjiObjectPageProps) {
-
   const header = (
     <ObjectPageHeader
       heading={kanji.meaning}
       subheading="Kanji"
+      headerContent={<Avatar text={kanji.kanji}></Avatar>}
       actions={[
         // <Button
         //   text="Mark as Learned"
         //   type="primary"
         //   onPress={() => {}}
         // ></Button>,
-        <Button
-          icon="decline"
-          type="tertiary"
-          onPress = {setState}
-        ></Button>
+        <Button icon="decline" type="tertiary" onPress={setState}></Button>,
       ]}
     ></ObjectPageHeader>
   );
 
   const wordsList = (
-      <div style={{ display: "block"}}>
-        {kanji?.words.map((e) => (
-          <StandardListItem
-            text={e.word}
-            byline={`${e.meaning} — ${e.pronunciation}`}
-          ></StandardListItem>
-        ))}
-      </div>
-    );
-  
-    const radicalsList = (
-      <div style={{ display: "block"}}>
-        {kanji?.radicals.map((e) => (
+    <div style={{ display: "block" }}>
+      {kanji?.words.map((e) => (
+        <StandardListItem
+          text={e.word}
+          byline={`${e.meaning} — ${e.pronunciation}`}
+        ></StandardListItem>
+      ))}
+    </div>
+  );
+
+  const radicalsList = (
+    <div style={{ display: "block" }}>
+      {kanji?.radicals.map((e) => (
+        <StandardListItem text={e}></StandardListItem>
+      ))}
+    </div>
+  );
+
+  const readingsSectionContent = (
+    <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+      <Title text="On'yomi" level="h6"></Title>
+      <div style={{ display: "block", paddingBottom: "1rem" }}>
+        {kanji?.readings.onyomi.map((e) => (
           <StandardListItem text={e}></StandardListItem>
         ))}
       </div>
-    );
-  
-    const readingsSectionContent = (
-      <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <Title text="On'yomi" level="h6"></Title>
-        <div style={{ display: "block", paddingBottom: "1rem"}}>
-          {kanji?.readings.onyomi.map((e) => (
-            <StandardListItem text={e}></StandardListItem>
-          ))}
-        </div>
-        <Title text="Kun'yomi" level="h6"></Title>
-        <div style={{ display: "block"}}>
-          {kanji?.readings.kunyomi.map((e) => (
-            <StandardListItem text={e}></StandardListItem>
-          ))}
-        </div>
+      <Title text="Kun'yomi" level="h6"></Title>
+      <div style={{ display: "block" }}>
+        {kanji?.readings.kunyomi.map((e) => (
+          <StandardListItem text={e}></StandardListItem>
+        ))}
       </div>
-    );
-  
-    const textArea = (
-      <TextArea
-        showCharacterCount={true}
-        placeholder="Write a mneumonic to memorise this Kanji"
-        characterLimit={256}
-        rows={5}
-      ></TextArea>
-    );
+    </div>
+  );
+
+  const textArea = (
+    <TextArea
+      showCharacterCount={true}
+      placeholder="Write a mneumonic to memorise this Kanji"
+      characterLimit={256}
+      rows={5}
+    ></TextArea>
+  );
 
   const sections = [
     <ObjectPageSection
@@ -96,8 +93,6 @@ export function KanjiObjectPage({ kanji, setState }: kanjiObjectPageProps) {
     ></ObjectPageSection>,
     <ObjectPageSection heading="Words" content={wordsList}></ObjectPageSection>,
   ];
-
-
 
   return <ObjectPage objectPageHeader={header} content={sections}></ObjectPage>;
 }
