@@ -7,3 +7,4 @@ export function Avatar({text, size = "L", color = "accent6"}:{text: string, size
     </div>
   )
 }
+
