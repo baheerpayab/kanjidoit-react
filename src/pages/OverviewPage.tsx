@@ -7,7 +7,7 @@ import { getKanji } from "../data/getKanji";
 import { FlexibleColumnLayout } from "../components/FlexibleColumnLayout/FlexibleColumnLayout";
 import { SearchField } from "../components/SearchField/SearchField";
 import { IconTabBar } from "../components/IconTabBar/IconTabBar";
-import type { Kanji } from "../types/kanji";
+import type { Kanji } from "../types/kanji.types";
 import { KanjiObjectPage } from "../features/kanji/KanjiObjectPage";
 
 export function OverviewPage() {
